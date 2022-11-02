@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <!-- FONTAWESOME -->
     <script src="https://kit.fontawesome.com/a009c454f8.js" crossorigin="anonymous"></script>
+    <!-- JAVASCRIPT -->
+    <script src="assets/util/util.js"></script>
     <link rel="icon" type="image/png" href="./assets/img/kiss.png">
     <title>Kokoro Kawaii Store</title>
 </head>
@@ -20,28 +22,30 @@
                 <h2>Kokoro Kawaii Store</h2>
             </div>
                 <div class="menu">
-                    <div>Todo</div>
-                    <div>Decoración</div>
-                    <div>Vasos y tazas</div>
-                    <div>Peluches y figuras</div>
-                    <div>Papeleria</div>
+                    <a href="#" class="link">
+                    <div class="todo" onclick="javascript:hideAndShow('all');">Todo</div>
+                    <div class="decor" onclick="javascript:hideAndShow('decor');">Decoración</div>
+                    <div class="tazas" onclick="javascript:hideAndShow('tazas');">Vasos y tazas</div>
+                    <div class="peluche" onclick="javascript:hideAndShow('peluche');">Peluches y figuras</div>
+                    <div class="papel" onclick="javascript:hideAndShow('papel');">Papeleria</div>
+                    </a>
                 </div>
             <i class="fa-solid fa-bars fa-lg"></i>
         </div>
         <div class="orderBy">
             <form class="filter">
                 <label>Ordenar por:</label>
-                <select name="ordenamiento">
-                    <option value="todo">Todo</option>
-                    <option value="decoracion">Decoración</option>
-                    <option value="vasosYtazas">Vasos y tazas</option>
-                    <option value="peluchesYfiguras">Peluches y figuras</option>
-                    <option value="papeleria">Papeleria</option>
+                <select name="ordenamiento" id="filter" onchange="javascript:hideAndShowSelect('');">
+                    <option value="all">Todo</option>
+                    <option value="decor">Decoración</option>
+                    <option value="tazas">Vasos y tazas</option>
+                    <option value="peluche">Peluches y figuras</option>
+                    <option value="papel">Papeleria</option>
                 </select>
             </form>
         </div>
         <div class="main">
-            <div class="productCard">
+            <div class="productCard all decor">
                 <img src="./assets/img/luz1.jpeg" alt="luz escritorio">
                 <h2>Luz de Escritorio</h2>
                 <p>$7990</p>
@@ -49,7 +53,7 @@
                     COMPRAR
                 </div>
             </div>
-            <div class="productCard">
+            <div class="productCard all tazas">
                 <img src="./assets/img/tazaGato.jpeg" alt="taza gato">
                 <h2>Tazas de gatito</h2>
                 <p>$8990</p>
@@ -57,7 +61,7 @@
                     COMPRAR
                 </div>
             </div>
-            <div class="productCard">
+            <div class="productCard all decor">
                 <img src="./assets/img/platosAnime.jpeg" alt="platos anime">
                 <h2>Platos animé variedades</h2>
                 <p>$5990</p>
@@ -65,7 +69,7 @@
                     COMPRAR
                 </div>
             </div>
-            <div class="productCard">
+            <div class="productCard all decor">
                 <img src="./assets/img/rilakumma.jpeg" alt="sillón rilakkuma">
                 <h2>Sillón Rilakkuma</h2>
                 <p>$25990</p>
@@ -73,44 +77,111 @@
                     COMPRAR
                 </div>
             </div>
-            <div class="productCard">
-                <img src="./assets/img/luz1.jpeg" alt="luz escritorio">
-                <h2>Luz de Escritorio</h2>
-                <p>$7990</p>
+            <div class="productCard all peluche">
+                <img src="./assets/img/patoKawaii.jpeg" alt="pato kawaii">
+                <h2>Lalafanfan</h2>
+                <p>$10990</p>
                 <div class="btn">
                     COMPRAR
                 </div>
             </div>
-            <div class="productCard">
-                <img src="./assets/img/tazaGato.jpeg" alt="taza gato">
-                <h2>Tazas de gatito</h2>
-                <p>$8990</p>
+            <div class="productCard all peluche">
+                <img src="./assets/img/totoro.jpeg" alt="totoro">
+                <h2>Figura de Totoro</h2>
+                <p>$12990</p>
                 <div class="btn">
                     COMPRAR
                 </div>
             </div>
-            <div class="productCard">
-                <img src="./assets/img/platosAnime.jpeg" alt="platos anime">
-                <h2>Platos animé variedades</h2>
+            <div class="productCard all papel">
+                <img src="./assets/img/destPulpo.jpeg" alt="destacadores pulpo">
+                <h2>Set de destacadores de pulpo kawaii</h2>
                 <p>$5990</p>
                 <div class="btn">
                     COMPRAR
                 </div>
             </div>
-            <div class="productCard">
-                <img src="./assets/img/rilakumma.jpeg" alt="sillón rilakkuma">
-                <h2>Sillón Rilakkuma</h2>
-                <p>$25990</p>
+            <div class="productCard all papel">
+                <img src="./assets/img/postit.jpeg" alt="sset postit gato">
+                <h2>Set de Postit de Gatos</h2>
+                <p>$4990</p>
                 <div class="btn">
                     COMPRAR
                 </div>
+            </div>
+                <div class="productCard all decor page2">
+                    <img src="./assets/img/mashimaro.jpeg" alt="luz mashimaro">
+                    <h2>Luz de Escritorio</h2>
+                    <p>$7990</p>
+                    <div class="btn">
+                        COMPRAR
+                    </div>
+                </div>
+                <div class="productCard all tazas page2">
+                    <img src="./assets/img/luna.jpeg" alt="taza luna">
+                    <h2>Tazas de gatito</h2>
+                    <p>$8990</p>
+                    <div class="btn">
+                        COMPRAR
+                    </div>
+                </div>
+                <div class="productCard all decor page2">
+                    <img src="./assets/img/platosEstrella.jpeg" alt="platos estrella">
+                    <h2>Platos animé variedades</h2>
+                    <p>$5990</p>
+                    <div class="btn">
+                        COMPRAR
+                    </div>
+                </div>
+                <div class="productCard all decor page2">
+                    <img src="./assets/img/rilaBlanco.jpeg" alt="sillón rilakkuma blanco">
+                    <h2>Sillón Rilakkuma</h2>
+                    <p>$25990</p>
+                    <div class="btn">
+                        COMPRAR
+                    </div>
+                </div>
+                <div class="productCard all peluche page2">
+                    <img src="./assets/img/lalafanfan.jpeg" alt="pato kawaii">
+                    <h2>Lalafanfan</h2>
+                    <p>$10990</p>
+                    <div class="btn">
+                        COMPRAR
+                    </div>
+                </div>
+                <div class="productCard all peluche page2">
+                    <img src="./assets/img/totoro.webp" alt="totoro">
+                    <h2>Figura de Totoro</h2>
+                    <p>$12990</p>
+                    <div class="btn">
+                        COMPRAR
+                    </div>
+                </div>
+                <div class="productCard all papel page2">
+                    <img src="./assets/img/pulpitos.jpeg" alt="destacadores pulpo">
+                    <h2>Set de destacadores de pulpo kawaii</h2>
+                    <p>$5990</p>
+                    <div class="btn">
+                        COMPRAR
+                    </div>
+                </div>
+                <div class="productCard all papel page2">
+                    <img src="./assets/img/gatitos.jpeg" alt="sset postit gato">
+                    <h2>Set de Postit de Gatos</h2>
+                    <p>$4990</p>
+                    <div class="btn">
+                        COMPRAR
+                    </div>
             </div>
         </div>
         <div class="pager">
             <div><i class="fa-solid fa-angles-left"></i></div>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
+            <a href="#" class="link">
+                <div onclick="javascript:paginator(1);">1</div>
+            </a>
+            <a href="#" class="link">
+                <div onclick="javascript:paginator(2);">2</div>
+            </a>
             <div><i class="fa-solid fa-angles-right"></i></div>
         </div>
         <div class="footer">

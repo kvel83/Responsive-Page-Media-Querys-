@@ -120,6 +120,10 @@
         flex-direction: column;
         justify-content: flex-start;
     }
+    .link{
+        text-decoration: none;
+        color:#ffe5d9;
+    }
     .nav i{
         display: none;
     }
@@ -132,6 +136,9 @@
         display: grid;
         grid-template-columns: auto auto auto auto;
         overflow: scroll;
+    }
+    .page2{
+        display: none;
     }
     .productCard{
         width: 15rem;
