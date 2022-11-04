@@ -35,7 +35,7 @@
         <div class="orderBy">
             <form class="filter">
                 <label>Ordenar por:</label>
-                <select name="ordenamiento" id="filter" onchange="javascript:hideAndShowSelect('');">
+                <select name="ordenamiento" id="filter" onchange="javascript:hideAndShowSelect();">
                     <option value="all">Todo</option>
                     <option value="decor">Decoración</option>
                     <option value="tazas">Vasos y tazas</option>
@@ -175,14 +175,18 @@
             </div>
         </div>
         <div class="pager">
-            <div><i class="fa-solid fa-angles-left"></i></div>
+            <a href="#" class="link">
+                <div onclick="javascript:paginator(0);"><i class="fa-solid fa-angles-left"></i></div>
+            </a>
             <a href="#" class="link">
                 <div onclick="javascript:paginator(1);">1</div>
             </a>
             <a href="#" class="link">
                 <div onclick="javascript:paginator(2);">2</div>
             </a>
-            <div><i class="fa-solid fa-angles-right"></i></div>
+            <a href="#" class="link">
+                <div onclick="javascript:paginator(3);"><i class="fa-solid fa-angles-right"></i></div>
+            </a>
         </div>
         <div class="footer">
             <div class="socialMedia">
